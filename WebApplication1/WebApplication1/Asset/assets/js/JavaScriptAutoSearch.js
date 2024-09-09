@@ -27,7 +27,7 @@
                 var formattedPrice = parseFloat(item.giaTien).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
 
                 var html_Search = `<div class="product-item">
-                    <a href="/ProductDetail?idSanPham=${item.maSanPham}">
+                    <a href="/ProductDetails?idSanPham=${item.maSanPham}">
                         <img src="${item.hinhSanPham}" alt="${item.tenSanPham}" />
                     </a>
                     <p class="price">${formattedPrice}</p>

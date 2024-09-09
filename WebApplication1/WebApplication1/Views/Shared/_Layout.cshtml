@@ -218,11 +218,24 @@
 
                             <ul class="header-action-link action-color--white action-hover-color--pink">
                                 <li>
-                                    <a href="@Url.Action("Index", "ThanhToan")">
-                                        <i class="icon-bag"></i>
-                                        <span class="item-count" style="color:white;">@cartItemCount</span>
+                                    @if (cartItemCount >0 )
+                                    {
+                                        <a href="@Url.Action("Index", "ThanhToan")">
+                                            <i class="icon-bag"></i>
+                                            <span class="item-count" style="color:white;">@cartItemCount</span>
 
-                                    </a>
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a href="@Url.Action("Index", "Home")">
+                                            <i class="icon-bag"></i>
+                                            <span class="item-count" style="color:white;">@cartItemCount</span>
+
+                                        </a>
+                                    }
+
+
                                 </li>
                                 <li><a href="#search"><i class="icon-magnifier"></i></a></li>
 
@@ -371,7 +384,7 @@
     <script src="~/Asset/assets/js/plugins/aos.min.js"></script>
     <script src="~/Asset/assets/js/plugins/jquery.instagramFeed.js"></script>
     <script src="~/Asset/assets/js/plugins/ajax-mail.js"></script>
-    <script src="~/Asset/assets/js/JavaScriptAutoSearch.js"></script>
+    <script src="~/Asset/assets/js/JavaScriptAutoSearching.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->

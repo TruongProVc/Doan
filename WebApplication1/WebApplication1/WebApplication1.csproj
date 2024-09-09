@@ -282,6 +282,7 @@
     <Content Include="Asset\assets\images\user\image-2.png" />
     <Content Include="Asset\assets\images\user\image-3.png" />
     <Content Include="Asset\assets\js\JavaScriptAutoSearch.js" />
+    <Content Include="Asset\assets\js\JavaScriptAutoSearching.js" />
     <Content Include="Asset\assets\js\main.js" />
     <Content Include="Asset\assets\js\plugins\ajax-mail.js" />
     <Content Include="Asset\assets\js\plugins\aos.min.js" />
@@ -294,7 +295,6 @@
     <Content Include="Asset\assets\js\plugins\plugins.min.js" />
     <Content Include="Asset\assets\js\plugins\swiper-bundle.min.js" />
     <Content Include="Asset\assets\js\plugins\venobox.min.js" />
-    <Content Include="Asset\assets\js\scripts.js" />
     <Content Include="Asset\assets\js\vendor\bootstrap.min.js" />
     <Content Include="Asset\assets\js\vendor\jquery-3.5.1.min.js" />
     <Content Include="Asset\assets\js\vendor\jquery-migrate-3.3.0.min.js" />
@@ -590,9 +590,7 @@
     <Content Include="Asset\Javascript\menu.js" />
     <Content Include="Asset\Javascript\plugins.js" />
     <Content Include="Asset\Javascript\plugins2.js" />
-    <Content Include="Asset\Javascript\scriptBuyTicket.js" />
     <Content Include="Asset\Javascript\scriptLogin.js" />
-    <Content Include="Asset\Javascript\scriptSeat.js" />
     <Content Include="Asset\Javascript\sidebar_dashboard.js" />
     <Content Include="Asset\Lib\apexchart\dist\apexcharts.amd.js" />
     <Content Include="Asset\Lib\apexchart\dist\apexcharts.amd.js.LICENSE.txt" />

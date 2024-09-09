@@ -197,16 +197,14 @@
                                     <div class="review-form-text-top">
                                         <h5>Thêm bình luận</h5>
                                     </div>
-
-                                    @using (Html.BeginForm("Create", "ProductDetail", FormMethod.Post, new { id = "commentForm" }))
+                                    @using (Html.BeginForm("Create", "ProductDetails", FormMethod.Post, new { id = "commentForm" }))
                                     {
                                         @Html.AntiForgeryToken()
-
                                         <input type="hidden" name="idSanPham" value="@Model.maSanPham" />
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="default-form-box">
-                                                    <textarea id="comment-review-text" name="noiDung1" placeholder="Write a review" required></textarea>
+                                                    <textarea id="comment-review-text" name="noiDung1" placeholder="Viết bình luận..." required></textarea>
                                                 </div>
                                             </div>
                                             <div class="col-12">
@@ -215,61 +213,48 @@
                                         </div>
                                     }
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $("#commentForm").submit(function (event) {
-            event.preventDefault(); // Prevent traditional form submission
+                                <script>
+                                    $(document).ready(function () {
+                                        $("#commentForm").submit(function (event) {
+                                            event.preventDefault();
 
-            $.ajax({
-                type: $(this).attr("method"),
-                url: $(this).attr("action"),
-                data: $(this).serialize(), // Serialize form data
-                success: function (response) {
-                    if (response.success) {
-                        // Clear the textarea
-                        $("#comment-review-text").val("");
+                                            $.ajax({
+                                                type: $(this).attr("method"),
+                                                url: $(this).attr("action"),
+                                                data: $(this).serialize(),
+                                                success: function (response) {
+                                                    if (response.success) {
+                                                        $("#comment-review-text").val("");
+                                                        $("#comment-list").empty();
 
-                        // Clear the existing comments
-                        $("#comment-list").empty();
-
-                        // Append new comments to the list
-                        $.each(response.comments, function (index, comment) {
-                            var commentHtml = `
-                                <li class="comment-item">
-                                    <div class="comment-wrapper">
-                                        <div class="comment-content">
-                                            <div class="comment-content-top">
-                                                <div class="comment-content-left">
-                                                    <h6 class="comment-name">ID tài khoản: ${comment.idTaiKhoan}</h6>
-                                                    <small>${comment.ngayDang}</small>
-                                                </div>
-                                            </div>
-                                            <div class="para-content">
-                                                <p>Bình luận: <span style="color:red;">${comment.noiDung}</span></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>`;
-                            $("#comment-list").append(commentHtml);
-                        });
-                    } else {
-                        alert("Vui lòng đăng nhập để bình luận.");
-                    }
-                },
-                error: function () {
-                    alert("Có lỗi xảy ra khi gửi yêu cầu. Vui lòng thử lại.");
-                }
-            });
-        });
-    });
-</script>
+                                                        $.each(response.comments, function (index, comment) {
+                                                            var commentHtml = `
+                                                                <li class="comment-item">
+                                                                    <div class="comment-wrapper">
+                                                                        <div class="comment-content">
+                                                                            <div class="comment-content-top">
+                                                                                <div class="comment-content-left">
+                                                                                    <h6 class="comment-name">ID tài khoản: ${comment.idTaiKhoan}</h6>
+                                                                                    <small>${comment.ngayDang}</small>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="para-content">
+                                                                                <p>Bình luận: <span style="color:red;">${comment.noiDung}</span></p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>`;
+                                                            $("#comment-list").append(commentHtml);
+                                                        });
+                                                    } else {
+                                                        alert("Vui lòng đăng nhập để bình luận.");
+                                                    }
+                                                },
+                                                error: function () {
+                                                    alert("Có lỗi xảy ra khi gửi bình luận. Vui lòng thử lại.");
+                                                }
+                                            });
+                                        });
+                                    });
+                                </script>

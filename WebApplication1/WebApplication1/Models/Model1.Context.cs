@@ -27,6 +27,7 @@ namespace WebApplication1.Models
     
         public virtual DbSet<BaiViet> BaiViets { get; set; }
         public virtual DbSet<BinhLuan> BinhLuans { get; set; }
+
         public virtual DbSet<ChiTietDonHang> ChiTietDonHangs { get; set; }
         public virtual DbSet<DanhMuc> DanhMucs { get; set; }
         public virtual DbSet<DonDatHang> DonDatHangs { get; set; }
@@ -42,5 +43,6 @@ namespace WebApplication1.Models
         public virtual DbSet<ThuongHieu> ThuongHieux { get; set; }
         public virtual DbSet<TrangThaiDon> TrangThaiDons { get; set; }
         public virtual DbSet<TrangThaiTaiKhoan> TrangThaiTaiKhoans { get; set; }
+
     }
 }

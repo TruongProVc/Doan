@@ -24,5 +24,7 @@ namespace WebApplication1.Models
         public int maNhom { get; set; }
         public int sttTrangThai { get; set; }
         public string diaChi { get; set; }
+        public virtual NhomTaiKhoan NhomTaiKhoan { get; set; }
+
     }
 }

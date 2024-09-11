@@ -17,5 +17,7 @@ namespace WebApplication1.Models
         public int maThuongHieu { get; set; }
         public string tenThuongHieu { get; set; }
         public string moTa { get; set; }
+        public virtual ICollection<SanPham> SanPhams{ get; set; }
+
     }
 }

@@ -44,10 +44,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
@@ -102,6 +102,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Asset\adminsite\assets\demo\chart-area-demo.js" />
+    <Content Include="Asset\adminsite\assets\demo\chart-bar-demo.js" />
+    <Content Include="Asset\adminsite\assets\demo\chart-pie-demo.js" />
+    <Content Include="Asset\adminsite\assets\demo\datatables-demo.js" />
+    <Content Include="Asset\adminsite\assets\img\error-404-monochrome.svg" />
+    <Content Include="Asset\adminsite\css\styles.css" />
+    <Content Include="Asset\adminsite\js\datatables-simple-demo.js" />
+    <Content Include="Asset\adminsite\js\scripts.js" />
     <Content Include="Asset\assets\css\plugins\animate.min.css" />
     <Content Include="Asset\assets\css\plugins\aos.min.css" />
     <Content Include="Asset\assets\css\plugins\jquery.lineProgressbar.css" />
@@ -1004,6 +1012,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\PrivateSite\Controllers\AccountManagementController.cs" />
+    <Compile Include="Areas\PrivateSite\Controllers\AritcleController.cs" />
+    <Compile Include="Areas\PrivateSite\Controllers\BrandController.cs" />
+    <Compile Include="Areas\PrivateSite\Controllers\CommentController.cs" />
+    <Compile Include="Areas\PrivateSite\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\PrivateSite\PrivateSiteAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AllItemController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -1025,6 +1039,7 @@
     </Compile>
     <Compile Include="Models\Common.cs" />
     <Compile Include="Models\CustomAuthentication.cs" />
+    <Compile Include="Models\CustomAuthorize.cs" />
     <Compile Include="Models\DanhMuc.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -1084,6 +1099,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\ArticleVM.cs" />
     <Compile Include="ViewModel\RegisterVM.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1174,6 +1190,16 @@
     <Content Include="Asset\Lib\Bootstrap\js\bootstrap.esm.min.js.map" />
     <Content Include="Asset\Lib\Bootstrap\js\bootstrap.js.map" />
     <Content Include="Asset\Lib\Bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Areas\PrivateSite\Views\web.config" />
+    <Content Include="Areas\PrivateSite\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\PrivateSite\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\PrivateSite\Views\Article\ArticleList.cshtml" />
+    <Content Include="Areas\PrivateSite\Views\Dashboard\Index.cshtml" />
+    <Content Include="Areas\PrivateSite\Views\Comment\Index.cshtml" />
+    <Content Include="Areas\PrivateSite\Views\Comment\Detail.cshtml" />
+    <Content Include="Areas\PrivateSite\Views\Brand\Index.cshtml" />
+    <Content Include="Areas\PrivateSite\Views\AccountManagement\ListOfAccount.cshtml" />
+    <Content Include="Areas\PrivateSite\Views\AccountManagement\DetailAccount.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -1199,6 +1225,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\PrivateSite\Data\" />
+    <Folder Include="Areas\PrivateSite\Views\BaiViet\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
